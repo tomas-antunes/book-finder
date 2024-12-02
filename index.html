@@ -47,3 +47,52 @@
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="app.js"></script>
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Choices.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
+</head>
+<body>
+    <div class="container">
+        <h1>Book Finder</h1>
+
+        <input type="text" id="searchInput" placeholder="Search for books..." />
+
+        <div class="filters">
+            <div>
+                <h3>Categories</h3>
+                <select id="categorySelect" multiple></select>
+            </div>
+            <div>
+                <h3>Availability</h3>
+                <label><input type="checkbox" id="freeCheckbox" value="free-ebooks"> Free Ebooks</label>
+                <label><input type="checkbox" id="paidCheckbox" value="paid-ebooks"> Paid Ebooks</label>
+            </div>
+            <div>
+                <h3>Text Type</h3>
+                <label><input type="checkbox" id="fullCheckbox" value="full"> Full Text</label>
+                <label><input type="checkbox" id="partialCheckbox" value="partial"> Partial Text</label>
+            </div>
+        </div>
+
+        <select id="orderSelect">
+            <option value="relevance">Sort by Relevance</option>
+            <option value="newest">Sort by Newest</option>
+        </select>
+
+        <button id="searchBtn">Search</button>
+
+        <div id="bookList" class="book-list"></div>
+    </div>
+
+    <!-- Include Choices.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="app.js"></script>
+</body>
