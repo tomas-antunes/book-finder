@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book Finder is a web application that allows users to search for books using the Google Books API. Users can filter books by categories, availability, and text type, and sort the results by relevance or newest.">
+    <meta name="keywords" content="books, book finder, search books, Google Books API, ebooks">
+    <meta name="author" content="Tomas Alves Antunes">
+    <title>EBook Finder</title>
     <link rel="stylesheet" href="style.css">
     <!-- Include Choices.js CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
     />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <h1>Book Finder</h1>
+        <h1>EBook Finder</h1>
 
         <input type="text" id="searchInput" placeholder="Search for books..." />
 
@@ -36,63 +42,23 @@
         <select id="orderSelect">
             <option value="relevance">Sort by Relevance</option>
             <option value="newest">Sort by Newest</option>
+            <option value="price-asc">Sort by Price: Low to High</option>
+            <option value="price-desc">Sort by Price: High to Low</option>
         </select>
 
         <button id="searchBtn">Search</button>
 
         <div id="bookList" class="book-list"></div>
-    </div>
 
-    <!-- Include Choices.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script src="app.js"></script>
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Finder</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Include Choices.js CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
-    />
-</head>
-<body>
-    <div class="container">
-        <h1>Book Finder</h1>
-
-        <input type="text" id="searchInput" placeholder="Search for books..." />
-
-        <div class="filters">
-            <div>
-                <h3>Categories</h3>
-                <select id="categorySelect" multiple></select>
-            </div>
-            <div>
-                <h3>Availability</h3>
-                <label><input type="checkbox" id="freeCheckbox" value="free-ebooks"> Free Ebooks</label>
-                <label><input type="checkbox" id="paidCheckbox" value="paid-ebooks"> Paid Ebooks</label>
-            </div>
-            <div>
-                <h3>Text Type</h3>
-                <label><input type="checkbox" id="fullCheckbox" value="full"> Full Text</label>
-                <label><input type="checkbox" id="partialCheckbox" value="partial"> Partial Text</label>
-            </div>
+        <div id="pagination" class="pagination">
+            <button id="prevPageBtn" disabled>Previous</button>
+            <span id="pageInfo"></span>
+            <button id="nextPageBtn">Next</button>
         </div>
-
-        <select id="orderSelect">
-            <option value="relevance">Sort by Relevance</option>
-            <option value="newest">Sort by Newest</option>
-        </select>
-
-        <button id="searchBtn">Search</button>
-
-        <div id="bookList" class="book-list"></div>
     </div>
 
     <!-- Include Choices.js JS -->
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="app.js"></script>
 </body>
+</html>
